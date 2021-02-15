@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Spring Web Registration Form Demo</title>
+    <div th:replace="fragments :: header"/>
+</head>
+<body>
+<div th:replace="fragments :: navigation"/>
+<div class="container">
+    <div class="bg-light p-5 rounded-lg m-3">
+        <h1>Spring Web Registration Form Demo</h1>
+        <p class="lead">Implementing Spring Security and Spring Data JPA w/ MySQL</p>
+        <hr class="my-4">
+        <p>Let's get started!</p>
+        <div class="d-grid gap-2">
+            <a class="btn btn-success btn-lg" href="/register" role="button">Click here to register</a><br />
+            <a class="btn btn-secondary btn-lg" href="/users" role="button">Click here for user list</a>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments :: footer"/>
+</body>
+</html>

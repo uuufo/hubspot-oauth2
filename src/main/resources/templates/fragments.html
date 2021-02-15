@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <div th:fragment="header">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Sprint Boot MVC / Thymeleaf Demo with Security">
+        <meta name="author" content="Jared Larsen">
+        <!--    <link rel="icon" href="../../favicon.ico" />-->
+        <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+        <link href="../static/css/main.css" rel="stylesheet" th:href="@{/css/main.css}"/>
+    </div>
+</head>
+<body>
+<div th:fragment="navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
+        <div class="container-fluid">
+            <a class="navbar-brand">Demo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <li class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">User List</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li sec:authorize="isAuthenticated()">
+                        <span class="text-secondary">Current user:</span>
+                        <span class="text-info" sec:authentication="name"></span>
+                        <span class="text-secondary">Roles:</span>
+                        <span class="text-info" sec:authentication="principal.authorities"></span>
+                    </li>
+                </ul>
+                <form class="d-flex"  action="#" th:action="@{/logout}" method="post">
+                    <div sec:authorize="isAuthenticated()">
+                        <a class="btn btn-success" href="/profile" role="button">Profile</a>
+                        <input class="btn btn-outline-success" type="submit" value="Log out"/>
+                    </div>
+                    <div sec:authorize="isAnonymous()">
+                        <a class="btn btn-outline-success" th:href="@{/login}">Log in</a>
+                    </div>
+                </form>
+            </li>
+        </div>
+    </nav>
+</div>
+<div th:fragment="footer">
+    <div class="container">
+        <footer>
+        </footer>
+    </div>
+</div>
+</body>
+</html>
+
+
