@@ -1,0 +1,50 @@
+dev/jlarsen/hubspotoauth2/services/UserService.java
+ dev.jlarsen.hubspotoauth2.services.UserService
+dev/jlarsen/hubspotoauth2/services/MyUserDetailsService.java
+ dev.jlarsen.hubspotoauth2.services.MyUserDetailsService
+dev/jlarsen/hubspotoauth2/models/Hubspot/Company.java
+ dev.jlarsen.hubspotoauth2.models.Hubspot.Company
+dev/jlarsen/hubspotoauth2/DemoApplication.java
+ dev.jlarsen.hubspotoauth2.DemoApplication
+dev/jlarsen/hubspotoauth2/repositories/UserRepository.java
+ dev.jlarsen.hubspotoauth2.repositories.UserRepository
+dev/jlarsen/hubspotoauth2/services/HubspotService.java
+ dev.jlarsen.hubspotoauth2.services.HubspotService
+ dev.jlarsen.hubspotoauth2.services.HubspotService$1
+ dev.jlarsen.hubspotoauth2.services.HubspotService$2
+dev/jlarsen/hubspotoauth2/models/Hubspot/RequestType.java
+ dev.jlarsen.hubspotoauth2.models.Hubspot.RequestType
+dev/jlarsen/hubspotoauth2/models/Hubspot/HubspotItemContainer.java
+ dev.jlarsen.hubspotoauth2.models.Hubspot.HubspotItemContainer
+dev/jlarsen/hubspotoauth2/configuration/MyAccessDeniedHandler.java
+ dev.jlarsen.hubspotoauth2.configuration.MyAccessDeniedHandler
+dev/jlarsen/hubspotoauth2/models/Hubspot/Contact.java
+ dev.jlarsen.hubspotoauth2.models.Hubspot.Contact
+dev/jlarsen/hubspotoauth2/models/Hubspot/HubspotApp.java
+ dev.jlarsen.hubspotoauth2.models.Hubspot.HubspotApp
+dev/jlarsen/hubspotoauth2/models/UserDto.java
+ dev.jlarsen.hubspotoauth2.models.UserDto
+dev/jlarsen/hubspotoauth2/exceptions/GlobalExceptionHandler.java
+ dev.jlarsen.hubspotoauth2.exceptions.GlobalExceptionHandler
+dev/jlarsen/hubspotoauth2/repositories/RoleRepository.java
+ dev.jlarsen.hubspotoauth2.repositories.RoleRepository
+dev/jlarsen/hubspotoauth2/repositories/HubspotAppRepository.java
+ dev.jlarsen.hubspotoauth2.repositories.HubspotAppRepository
+dev/jlarsen/hubspotoauth2/controllers/UserController.java
+ dev.jlarsen.hubspotoauth2.controllers.UserController
+dev/jlarsen/hubspotoauth2/exceptions/UserExistsException.java
+ dev.jlarsen.hubspotoauth2.exceptions.UserExistsException
+dev/jlarsen/hubspotoauth2/models/Token.java
+ dev.jlarsen.hubspotoauth2.models.Token
+dev/jlarsen/hubspotoauth2/controllers/HubspotController.java
+ dev.jlarsen.hubspotoauth2.controllers.HubspotController
+dev/jlarsen/hubspotoauth2/facades/UserFacade.java
+ dev.jlarsen.hubspotoauth2.facades.UserFacade
+dev/jlarsen/hubspotoauth2/models/Role.java
+ dev.jlarsen.hubspotoauth2.models.Role
+dev/jlarsen/hubspotoauth2/configuration/WebSecurityConfig.java
+ dev.jlarsen.hubspotoauth2.configuration.WebSecurityConfig
+dev/jlarsen/hubspotoauth2/models/User.java
+ dev.jlarsen.hubspotoauth2.models.User
+dev/jlarsen/hubspotoauth2/models/Hubspot/HubspotResponse.java
+ dev.jlarsen.hubspotoauth2.models.Hubspot.HubspotResponse

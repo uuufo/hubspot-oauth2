@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>HubSpot Contacts</title>
+    <div th:replace="fragments :: header"/>
+<!--    <link href="../../static/css/bootstrap.css" rel="stylesheet"/>-->
+</head>
+<body>
+<div th:replace="fragments :: navigation"/>
+<div class="container">
+    <div class="bg-light p-5 rounded-lg m-3">
+        <h1>Current HubSpot Contact List</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="contact:${contacts}">
+                <th scope="row" th:text="${contact.id}"></th>
+                <td th:text="${contact.properties.firstName}"></td>
+                <td th:text="${contact.properties.lastName}"></td>
+                <td th:text="${contact.properties.phone}"></td>
+                <td th:text="${contact.properties.email}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <form class="row g-3" th:action="@{/hubspot/contacts}" method="post" th:object="${contact}">
+            <div class="col-auto">
+                <label for="inputFirstName" class="visually-hidden">First Name</label>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" th:field="*{firstName}" required>
+            </div>
+            <div class="col-auto">
+                <label for="inputLastName" class="visually-hidden">Last Name</label>
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" th:field="*{lastName}" required>
+            </div>
+            <div class="col-auto">
+                <label for="inputPhone" class="visually-hidden">Phone</label>
+                <input type="text" class="form-control" id="inputPhone" placeholder="Phone" th:field="*{phone}" required>
+            </div>
+            <div class="col-auto">
+                <label for="inputEmail" class="visually-hidden">Email</label>
+                <input type="text" class="form-control" id="inputEmail" placeholder="Email" th:field="*{email}" required>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success mb-3">Save</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+<div th:replace="fragments :: footer"/>
+</body>
+</html>

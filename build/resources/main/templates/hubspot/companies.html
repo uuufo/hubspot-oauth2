@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>HubSpot Companies</title>
+    <div th:replace="fragments :: header"/>
+<!--    <link href="../../static/css/bootstrap.css" rel="stylesheet"/>-->
+</head>
+<body>
+<div th:replace="fragments :: navigation"/>
+<div class="container">
+    <div class="bg-light p-5 rounded-lg m-3">
+        <h1>Current HubSpot Company List</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Domain</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="company:${companies}">
+                <th scope="row" th:text="${company.id}"></th>
+                <td th:text="${company.properties.name}"></td>
+                <td th:text="${company.properties.city}"></td>
+                <td th:text="${company.properties.state}"></td>
+                <td th:text="${company.properties.phone}"></td>
+                <td th:text="${company.properties.domain}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <form class="row g-3" th:action="@{/hubspot/companies}" method="post" th:object="${company}">
+            <div class="col-auto">
+                <label for="inputName" class="visually-hidden">Name</label>
+                <input type="text" class="form-control" id="inputName" placeholder="Name" th:field="*{name}" required>
+            </div>
+            <div class="col-auto">
+                <label for="inputCity" class="visually-hidden">City</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="City" th:field="*{city}" required>
+            </div>
+            <div class="col-auto">
+                <label for="inputState" class="visually-hidden">State</label>
+                <input type="text" class="form-control" id="inputState" placeholder="State" th:field="*{state}" required>
+            </div>
+            <div class="col-auto">
+                <label for="inputPhone" class="visually-hidden">Phone</label>
+                <input type="text" class="form-control" id="inputPhone" placeholder="Phone" th:field="*{phone}" required>
+            </div>
+            <div class="col-auto">
+                <label for="inputDomain" class="visually-hidden">Domain</label>
+                <input type="text" class="form-control" id="inputDomain" placeholder="Domain" th:field="*{domain}" required>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success mb-3">Save</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+<div th:replace="fragments :: footer"/>
+</body>
+</html>

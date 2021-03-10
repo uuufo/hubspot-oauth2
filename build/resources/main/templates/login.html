@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Login</title>
+    <div th:replace="fragments :: header"/>
+</head>
+<body>
+<div th:replace="fragments :: navigation"/>
+<div class="container">
+    <div class="bg-light p-5 rounded-lg m-3">
+        <h1>Please Login</h1>
+        <div class="p-3 rounded-lg m-2">
+            <p class="text-danger" th:if="${param.error}">Wrong user or password</p>
+            <form th:action="@{/login}" method="post">
+                <div class="mb-3 row">
+                    <label for="username" class="col-sm-2 col-form-label">Email Address</label>
+                    <div class="col-sm-5">
+                        <input type="email" class="form-control" id="username" name="username"
+                               placeholder="name@example.com">
+                    </div>
+                </div>
+                <div class="mb-4 row">
+                    <label for="password" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-5">
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <input class="btn btn-success btn-lg" type="submit" value="Log in"/>
+                </div>
+                <div class="row">
+                    <a class="text-success" href="/register">Or sign up for new account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments :: footer"/>
+</body>
+</html>
+
+

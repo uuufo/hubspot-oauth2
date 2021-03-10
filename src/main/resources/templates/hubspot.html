@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>HubSpot</title>
+    <div th:replace="fragments :: header"/>
+</head>
+<body>
+<div th:replace="fragments :: navigation"/>
+<div class="container">
+    <div class="bg-light p-5 rounded-lg m-3">
+        <h1>HubSpot</h1>
+        <p class="lead">Success!</p>
+        <hr class="my-4">
+        <a class="btn btn-success" href="/hubspot/contacts" role="button">Contacts</a>
+    </div>
+</div>
+<div th:replace="fragments :: footer"/>
+</body>
+</html>
